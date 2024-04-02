@@ -24,6 +24,12 @@
            {{i.date}}
            <hr/>
            {{i.details}}
+           <br>
+           <br>
+           <form action="/del/{{i.id}}" method="POST">
+            {% csrf_token %}
+            <button value="remove" type="submit" style="background: red; float:right">Remove</button>
+           </form>
            </div>
         {%endfor%}
        </div>
