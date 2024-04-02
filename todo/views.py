@@ -19,3 +19,9 @@ def index(request):
     }
 
     return render(request,"home.html",page)
+
+def remove(request, item_id):
+    item = Todo.objects.get(id=item_id)
+    item.delete()
+    messages.info(request, "item removed ! ! !")
+    return redirect('todo')
